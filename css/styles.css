@@ -138,7 +138,7 @@ img {
 .menu-link {
   color: var(--header-color);
   position: relative;
-  transition: color 250ms linear, transform cubic-bezier(0.4, 0, 0.2, 1);
+  transition: color 250ms, transform cubic-bezier(0.4, 0, 0.2, 1);
 }
 .menu-link.current::after {
   display: block;
@@ -165,7 +165,7 @@ img {
   color: var(--primary-text-color);
   display: flex;
   align-items: center;
-  transition: color 250ms linear, transform cubic-bezier(0.4, 0, 0.2, 1);
+  transition: color 250ms, transform cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .menu-auto-list {
@@ -261,7 +261,7 @@ img {
   background-color: var(--second-background-color);
   cursor: pointer;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
-  transition: background-color 250ms linear, transform cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color 250ms, transform cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .main-btn:hover,
@@ -415,8 +415,8 @@ img {
   height: 100%;
   border-radius: 50%;
   color: var(--icon-color-second);
-  transition: background-color 250ms linear, transform cubic-bezier(0.4, 0, 0.2, 1),
-    color 250ms linear, transform cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color 250ms, transform cubic-bezier(0.4, 0, 0.2, 1), color 250ms,
+    transform cubic-bezier(0.4, 0, 0.2, 1);
 }
 .cocial-link:hover,
 .cocial-link:focus {
@@ -458,9 +458,8 @@ img {
   text-align: center;
   color: var(--third-text-color);
   cursor: pointer;
-  transition: background-color 250ms linear, transform cubic-bezier(0.4, 0, 0.2, 1),
-    color 250ms linear, transform cubic-bezier(0.4, 0, 0.2, 1), box-shadow 250ms linear,
-    transform cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color 250ms, transform cubic-bezier(0.4, 0, 0.2, 1), color 250ms,
+    transform cubic-bezier(0.4, 0, 0.2, 1), box-shadow 250ms, transform cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .btn-filters:hover,
@@ -491,7 +490,7 @@ img {
 }
 .link-project-hover {
   display: block;
-  transition: box-shadow 250ms linear, transform cubic-bezier(0.4, 0, 0.2, 1);
+  transition: box-shadow 250ms, transform cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .title-img {
@@ -560,7 +559,7 @@ img {
   border: 1px solid var(--icon-color-second);
   border-radius: 4px;
   color: var(--icon-color-second);
-  transition: border-color 250ms linear, transform cubic-bezier(0.4, 0, 0.2, 1), color 250ms linear,
+  transition: border-color 250ms, transform cubic-bezier(0.4, 0, 0.2, 1), color 250ms,
     transform cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -610,13 +609,13 @@ img {
 
 .adress-area {
   color: var(--second-text-color);
-  transition: color 250ms linear, transform cubic-bezier(0.4, 0, 0.2, 1);
+  transition: color 250ms, transform cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .adress-mail,
 .adress-tel {
   color: rgba(255, 255, 255, 0.6);
-  transition: color 250ms linear, transform cubic-bezier(0.4, 0, 0.2, 1);
+  transition: color 250ms, transform cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .adress-area:hover,
