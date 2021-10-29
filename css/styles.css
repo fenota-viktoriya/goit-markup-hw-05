@@ -132,6 +132,7 @@ img {
 .menu-link {
   color: var(--header-color);
   position: relative;
+  transition: color 250ms linear, transform cubic-bezier(0.4, 0, 0.2, 1);
 }
 .menu-link.current::after {
   display: block;
@@ -158,6 +159,7 @@ img {
   color: var(--primary-text-color);
   display: flex;
   align-items: center;
+  transition: color 250ms linear, transform cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .menu-auto-list {
@@ -186,10 +188,6 @@ img {
   display: block;
 }
 
-.header-icon-hover:hover .icon,
-.header-icon-hover:focus .icon {
-  fill: var(--accent-text-color);
-}
 .header-mail:focus,
 .header-mail:hover,
 .header-tel:focus,
@@ -257,11 +255,11 @@ img {
   background-color: var(--second-background-color);
   cursor: pointer;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  transition: background-color 250ms linear, transform cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .main-btn:hover,
 .main-btn:focus {
-  color: var(--second-text-color);
   background-color: var(--hover-color);
 }
 /* наши преимущества*/
@@ -411,6 +409,8 @@ img {
   height: 100%;
   border-radius: 50%;
   color: var(--icon-color-second);
+  transition: background-color 250ms linear, transform cubic-bezier(0.4, 0, 0.2, 1),
+    color 250ms linear, transform cubic-bezier(0.4, 0, 0.2, 1);
 }
 .cocial-link:hover,
 .cocial-link:focus {
@@ -452,6 +452,9 @@ img {
   text-align: center;
   color: var(--third-text-color);
   cursor: pointer;
+  transition: background-color 250ms linear, transform cubic-bezier(0.4, 0, 0.2, 1),
+    color 250ms linear, transform cubic-bezier(0.4, 0, 0.2, 1), box-shadow 250ms linear,
+    transform cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .btn-filters:hover,
@@ -507,6 +510,25 @@ img {
   /* identical to box height, or 187% */
   color: var(--primary-text-color);
 }
+.project-block {
+  position: relative;
+}
+
+.project-block-text {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(33, 150, 243, 0.9);
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: 18px;
+  line-height: 1.56;
+  letter-spacing: 0.03em;
+  color: var(--second-text-color);
+}
 /*секция наши клиенты*/
 .our-clients-list {
   display: flex;
@@ -524,6 +546,8 @@ img {
   border: 1px solid var(--icon-color-second);
   border-radius: 4px;
   color: var(--icon-color-second);
+  transition: border-color 250ms linear, transform cubic-bezier(0.4, 0, 0.2, 1), color 250ms linear,
+    transform cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .our-clients-item:not(:last-child) {
@@ -572,11 +596,13 @@ img {
 
 .adress-area {
   color: var(--second-text-color);
+  transition: color 250ms linear, transform cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .adress-mail,
 .adress-tel {
   color: rgba(255, 255, 255, 0.6);
+  transition: color 250ms linear, transform cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .adress-area:hover,
