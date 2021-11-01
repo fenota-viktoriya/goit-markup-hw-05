@@ -17,6 +17,9 @@
   --icon-color: #757575;
   --icon-background: #f5f4fa;
   --icon-color-second: #afb1b8;
+  --cubic: cubic-bezier(0.4, 0, 0.2, 1);
+  --time: 250ms;
+  --background-color-overly: rgba(33, 150, 243, 0.9);
 }
 
 body {
@@ -76,9 +79,10 @@ img {
 }
 
 /*шапка*/
-.header {
+.page-header {
   position: fixed;
-  width: 100%;
+  top: 0;
+  width: 100vw;
   margin-right: auto;
   margin-left: auto;
   background-color: var(--main-background-color);
@@ -118,7 +122,6 @@ img {
   font-weight: bold;
   font-size: 26px;
   line-height: 1.19;
-  /* identical to box height */
 
   letter-spacing: 0.03em;
 
@@ -138,17 +141,17 @@ img {
 .menu-link {
   color: var(--header-color);
   position: relative;
-  transition: color 250ms, transform cubic-bezier(0.4, 0, 0.2, 1);
+  transition: color var(--time) var(--cubic);
 }
 .menu-link.current::after {
+  position: absolute;
+  top: 28px;
   display: block;
   content: "";
   width: 100%;
   height: 4px;
   border-radius: 2px;
   background-color: var(--accent-text-color);
-  position: absolute;
-  top: 28px;
 }
 
 .menu-link:hover,
@@ -162,10 +165,10 @@ img {
 
 .header-mail,
 .header-tel {
-  color: var(--primary-text-color);
   display: flex;
   align-items: center;
-  transition: color 250ms, transform cubic-bezier(0.4, 0, 0.2, 1);
+  color: var(--primary-text-color);
+  transition: color var(--time) var(--cubic);
 }
 
 .menu-auto-list {
@@ -208,18 +211,17 @@ img {
 }
 
 .overlay {
-  background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
-    url("../images/2/teamwork.jpg");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-
   max-width: 1600px;
   height: 600px;
   padding-top: 200px;
   padding-bottom: 200px;
   margin-left: auto;
   margin-right: auto;
+  background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+    url("../images/2/teamwork.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
 
 .section-hero-container {
@@ -234,8 +236,6 @@ img {
   font-weight: 900;
   font-size: 44px;
   line-height: 1.36;
-  /* or 136% */
-
   letter-spacing: 0.06em;
   text-transform: uppercase;
   color: var(--second-title-color);
@@ -254,14 +254,12 @@ img {
   font-size: 16px;
   line-height: 1.87;
   letter-spacing: 0.06em;
-
-  /* identical to box height, or 187% */
   color: var(--second-text-color);
 
   background-color: var(--second-background-color);
   cursor: pointer;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
-  transition: background-color 250ms, transform cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color var(--time) var(--cubic);
 }
 
 .main-btn:hover,
@@ -415,8 +413,7 @@ img {
   height: 100%;
   border-radius: 50%;
   color: var(--icon-color-second);
-  transition: background-color 250ms, transform cubic-bezier(0.4, 0, 0.2, 1), color 250ms,
-    transform cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color var(--time) var(--cubic), color var(--time) var(--cubic);
 }
 .cocial-link:hover,
 .cocial-link:focus {
@@ -448,18 +445,16 @@ img {
   padding: 6px 22px;
   border-radius: 4px;
   border: none;
-
   font-family: inherit;
   font-weight: 500;
   font-size: 16px;
   line-height: 1.62;
   letter-spacing: 0.03em;
-  /* identical to box height, or 162% */
   text-align: center;
   color: var(--third-text-color);
   cursor: pointer;
-  transition: background-color 250ms, transform cubic-bezier(0.4, 0, 0.2, 1), color 250ms,
-    transform cubic-bezier(0.4, 0, 0.2, 1), box-shadow 250ms, transform cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color var(--time) var(--cubic), color var(--time) var(--cubic),
+    box-shadow var(--time) var(--cubic);
 }
 
 .btn-filters:hover,
@@ -490,7 +485,7 @@ img {
 }
 .link-project-hover {
   display: block;
-  transition: box-shadow 250ms, transform cubic-bezier(0.4, 0, 0.2, 1);
+  transition: box-shadow var(--time) var(--cubic);
 }
 
 .title-img {
@@ -513,13 +508,14 @@ img {
   font-size: 16px;
   line-height: 1.87;
   letter-spacing: 0.03em;
-  /* identical to box height, or 187% */
   color: var(--primary-text-color);
 }
+
 .project-block {
   position: relative;
   overflow: hidden;
 }
+
 .project-overly {
   display: flex;
   justify-content: center;
@@ -529,9 +525,9 @@ img {
   height: 100%;
   top: 0;
   left: 0;
-  background-color: rgba(33, 150, 243, 0.9);
+  background-color: var(--background-color-overly);
   transform: translateY(100%);
-  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform var(--time) var(--cubic);
 }
 .project-overly-text {
   width: 328px;
@@ -543,11 +539,10 @@ img {
 }
 .link-project-hover:focus .project-overly,
 .link-project-hover:hover .project-overly {
-  transform: translatey(0);
+  transform: translateY(0);
 }
-
 /*
-.project-overly-text  {
+.project-overly-text {
   display: flex;
   align-items: center;
   text-align: center;
@@ -564,8 +559,8 @@ img {
   transform: translatey(100%);
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-.link-project-hover:focus .project-overly-text ,
-.link-project-hover:hover .project-overly-text  {
+.link-project-hover:focus .project-overly-text,
+.link-project-hover:hover .project-overly-text {
   transform: translatey(0);
 }*/
 
@@ -586,8 +581,7 @@ img {
   border: 1px solid var(--icon-color-second);
   border-radius: 4px;
   color: var(--icon-color-second);
-  transition: border-color 250ms, transform cubic-bezier(0.4, 0, 0.2, 1), color 250ms,
-    transform cubic-bezier(0.4, 0, 0.2, 1);
+  transition: border-color var(--time) var(--cubic), color var(--time) var(--cubic);
 }
 
 .our-clients-item:not(:last-child) {
@@ -636,13 +630,13 @@ img {
 
 .adress-area {
   color: var(--second-text-color);
-  transition: color 250ms, transform cubic-bezier(0.4, 0, 0.2, 1);
+  transition: color var(--time) var(--cubic);
 }
 
 .adress-mail,
 .adress-tel {
   color: rgba(255, 255, 255, 0.6);
-  transition: color 250ms, transform cubic-bezier(0.4, 0, 0.2, 1);
+  transition: color var(--time) var(--cubic);
 }
 
 .adress-area:hover,
@@ -687,4 +681,58 @@ img {
 }
 .footer-cocial-media-list {
   display: flex;
+}
+/*модальное окно*/
+.backdrop {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 999;
+  background-color: rgba(0, 0, 0, 0.2);
+  opacity: 1;
+  transition: opacity var(--time) var(--cubic), visibility var(--time) var(--cubic);
+}
+.backdrop.is-hidden {
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--time) var(--cubic), visibility var(--time) var(--cubic);
+}
+
+.backdrop.is-hidden .modal {
+  transform: translate(-50%, -50%) scale(0.8);
+
+  transition: transform var(--time) var(--cubic);
+}
+.modal {
+  position: absolute;
+  min-width: 528px;
+  min-height: 581px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) scale(1);
+
+  transition: transform var(--time) var(--cubic);
+
+  background: var(--second-text-color);
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+}
+
+.modal-button-close {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  width: 30px;
+  height: 30px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  background: #ffffff;
 }

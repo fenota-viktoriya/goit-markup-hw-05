@@ -22,7 +22,7 @@
 
 <body>
   <!--шапка-->
-  <header class="header">
+  <header class=" page-header">
     <div class="container header-content">
 
       <nav class="header-nav">
@@ -63,10 +63,13 @@
               Эффективные решения
               для вашего бизнеса
             </h1>
-            <button class="main-btn" type="button">Заказать услугу</button>
+            <button class="main-btn" type="button" data-modal-open>Заказать услугу</button>
           </div>
         </div>
       </div>
+
+
+
     </section>
 
 
@@ -148,7 +151,7 @@
             <img src="./images/mobile-app.jpg" width="370" alt="картинка-разработка-мобильных-приложений" />
             <div class="activity-description">
               <p class="text-activity-description">
-              Мобильные приложения
+                Мобильные приложения
               </p>
             </div>
           </li>
@@ -156,7 +159,7 @@
             <img src="./images/pad.jpg" width="370" alt="картинка-разработка-игр" />
             <div class="activity-description">
               <p class="text-activity-description">
-              Дизайнерские решения
+                Дизайнерские решения
               </p>
             </div>
           </li>
@@ -347,6 +350,23 @@
 
     </div>
   </footer>
+  <!--Модальное окно-->
+  <div class="backdrop is-hidden" data-modal>
+    <div class="modal">
+      <button type="button" class="modal-button-close" data-modal-close> <svg class=" modal-close-icon" width="18"
+          height="18">
+          <use href="./images/symbol-defs.svg#icon-close"></use>
+        </svg></button>
+    </div>
+  </div>
+  <!--Скрипты-->
+  <script src="./js/modal.js"></script>
+  <script>
+    const { height: pageHeaderHeight } = document
+      .querySelector(".page-header")
+      .getBoundingClientRect();
+    document.body.style.paddingTop = `${pageHeaderHeight}px`;
+  </script>
 </body>
 
 </html>
